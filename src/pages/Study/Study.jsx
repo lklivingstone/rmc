@@ -151,12 +151,12 @@ const Study = () => {
             <div style={{width: "100%", display: "flex"}}>
                 <div style={{flex:2, width: "100%", display: "flex", justifyContent: "flex-end", padding: "20px"}} >
                     <ul style={{lineHeight: "40px", listStyle: "none", textAlign: "right"}} >
-                        <li onClick={()=> setOption("key")} >Key information</li>
-                        <li onClick={()=> setOption("overview")} >Overview</li>
-                        <li onClick={()=> setOption("programme")} >Programme structure</li>
-                        <li onClick={()=> setOption("admission")} >Admission requirements</li>
-                        <li onClick={()=> setOption("fees")} >Fees and funding</li>
-                        <li onClick={()=> setOption("work")} >Work permit</li>
+                        <li onClick={()=> setOption("key")} style={{ cursor: "pointer", color: "blue"}} >Key information</li>
+                        <li onClick={()=> setOption("overview")} style={{ cursor: "pointer", color: "blue"}} >Overview</li>
+                        <li onClick={()=> setOption("programme")} style={{ cursor: "pointer", color: "blue"}} >Programme structure</li>
+                        <li onClick={()=> setOption("admission")} style={{ cursor: "pointer", color: "blue"}} >Admission requirements</li>
+                        <li onClick={()=> setOption("fees")} style={{ cursor: "pointer", color: "blue"}} >Fees and funding</li>
+                        <li onClick={()=> setOption("work")} style={{ cursor: "pointer", color: "blue"}} >Work permit</li>
                     </ul>
                 </div>
                 {
