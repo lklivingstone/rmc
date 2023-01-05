@@ -8,9 +8,8 @@ const authRoute= require("./routes/auth")
 const degreeRoute= require("./routes/degree")
 
 app.use(cors({
-    credentials: true,
-    origin: true
-}))
+    origin: '*'
+}));
 
 app.use(express.json())
 
