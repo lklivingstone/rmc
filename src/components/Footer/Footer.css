@@ -1,0 +1,57 @@
+.footer {
+    display: flex;
+    padding: 20px;
+}
+
+
+.footer-item {
+    flex: 1;
+    padding: 30px;
+}
+
+.sitemap-item {
+    text-decoration: none;
+    list-style-type: none;
+    padding-bottom: 10px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 40%;
+    background: #f1f1f1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: rgb(203, 84, 54);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: rgb(184, 76, 49);
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  

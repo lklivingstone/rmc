@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom"
+import Bachelor from "./pages/Bachelor/Bachelor";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Study from "./pages/Study/Study";
+
+import { useSelector } from 'react-redux';
+import { selectUser } from './redux/userRedux';
+import Admin from "./pages/Admin/Admin";
+
+
 
 function App() {
+  const user= useSelector(selectUser)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter >
+        <Routes >
+          <Route path="/" exact element={<Home />}/>
+          <Route path="/login" element= {user ? <Navigate to="/admin" replace /> :  <Login />} />
+          <Route path="/admin" element= {user===null ? <Navigate to="/login" replace /> :  <Admin />} />
+          <Route path="/bachelor" exact element={<Bachelor />}/>
+          <Route path="/studies/:id" exact element={<Study />}/>
+          <Route path="/login" exact element={<Login />}/>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

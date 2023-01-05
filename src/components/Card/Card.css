@@ -1,0 +1,45 @@
+.card {
+    width: 85%;
+    margin: 15px;
+    padding: 20px;
+    height: 30vh;
+    position: relative;
+}
+
+.header {
+    font-weight: 500;
+}
+
+.about {
+    font-size: 10px;
+    width: 65%;
+}
+
+.fees {
+    position: absolute;
+    top: 8vh;
+    right: 20px;
+}
+
+.duration {
+    position: absolute;
+    top: 11vh;
+    right: 20px;
+}
+
+.details {
+    font-size: 13px
+}
+
+.university {
+    line-height: 5px;
+}
+
+.university-name {
+    font-size: 13px;
+}
+
+.location {
+    font-size: 13px;
+    color: rgb(69, 69, 69);
+}
