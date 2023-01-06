@@ -30,3 +30,14 @@ export const getDegree= async (id) => {
 
     }
 }
+
+export const postDegree= async (data) => {
+    try {
+        const res = await publicRequest.post("/degree", data)
+        // console.log(data)
+        // res.status(200).json(res)
+    }
+    catch(err) {
+
+    }
+}

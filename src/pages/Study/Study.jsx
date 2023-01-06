@@ -169,7 +169,7 @@ const Study = () => {
                             
                             {deg.fulltime && <p>Full-time</p>}
                             {!deg.fulltime && <p>Part-time</p>}
-                            <p>{deg.duration*12}</p>
+                            <p>{deg.duration} years</p>
                             
                             <h5 className="sub-heading" >Start dates & application deadlines</h5>
                             <p>Starting {deg.start}</p>
