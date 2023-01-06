@@ -49,10 +49,10 @@ const Admin = () => {
         
         const list= [ ...location]
         list[index]["each"]= value
-        console.log(location)
-        location.filter((loc)=> {
-            console.log(loc.each)
-        })
+        // console.log(location)
+        // location.filter((loc)=> {
+        //     console.log(loc.each)
+        // })
         setLocation(list)
     }
 
@@ -96,7 +96,7 @@ const Admin = () => {
         const list= [ ...disciplines]
         list[index]["discipline"]= value
         setDisciplines(list)
-        console.log(disciplines)
+        // console.log(disciplines)
     }
 
 
@@ -129,7 +129,7 @@ const Admin = () => {
         const list= [ ...programmestructure]
         list[index]["points"]= value
         setProgrammestructure(list)
-        console.log(programmestructure)
+        // console.log(programmestructure)
     }
 
 
@@ -197,38 +197,37 @@ const Admin = () => {
         const list= [ ...otherrequirements]
         list[index]["other"]= value
         setOtherrequirements(list)
-        console.log(otherrequirements)
+        // console.log(otherrequirements)
     }
 
     const [cost, setCost]= useState()
 
     const handleSubmit= (e) => {
-        e.preventDefault()
-        console.log({
-            name, 
-            degree,
-            university,
-            website,
-            location,
-            fees,
-            duration,
-            fulltime,
-            campus,
-            about,
-            rating,
-            ranking,
-            credits,
-            language,
-            start,
-            apply,
-            disciplines,
-            overview,
-            programmestructure,
-            acadrequirements,
-            engrequirements,
-            otherrequirements,
-            cost
-        })
+        // console.log({
+        //     name, 
+        //     degree,
+        //     university,
+        //     website,
+        //     location,
+        //     fees,
+        //     duration,
+        //     fulltime,
+        //     campus,
+        //     about,
+        //     rating,
+        //     ranking,
+        //     credits,
+        //     language,
+        //     start,
+        //     apply,
+        //     disciplines,
+        //     overview,
+        //     programmestructure,
+        //     acadrequirements,
+        //     engrequirements,
+        //     otherrequirements,
+        //     cost
+        // })
         postDegree({
             name, 
             degree,
