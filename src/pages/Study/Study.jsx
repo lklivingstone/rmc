@@ -50,7 +50,6 @@ const Study = () => {
         // if (deg) {
         //     setTOEFL(deg?.engrequirements[1]?.req)
         // }
-        console.log(deg.engrequirements)
 
         setLoading(false)
     }, [deg])
