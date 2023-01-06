@@ -27,11 +27,11 @@ const DegreeSchema= new mongoose.Schema(
             }
         ],
         fees: {
-            type: Number,
+            type: String,
             required: true
         },
         duration: {
-            type: Number,
+            type: String,
             required: true
         },
         fulltime: {
@@ -47,10 +47,10 @@ const DegreeSchema= new mongoose.Schema(
             required: true
         },
         rating: {
-            type: Number
+            type: String,
         },
         ranking: {
-            type: Number
+            type: String,
         },
         credits: {
             type: String,
@@ -95,7 +95,7 @@ const DegreeSchema= new mongoose.Schema(
         engrequirements: [
             {
                 req: {
-                    type: Number,
+                    type: String,
                     required: true
                 }
             }
