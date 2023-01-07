@@ -14,14 +14,30 @@ router.post("/", async (req, res) => {
 })
 
 router.get("/", async (req, res)=> {
-    try {
-        const foundDegrees= await Degree.find()
+    const searchQuery= req.query.search
 
-        res.status(200).json(foundDegrees)
+    if (searchQuery) {
+        try {
+            const regex= new RegExp(searchQuery, "i")
+            const degreeFilter= await Degree.find({name:regex})
+            
+            res.status(200).json(degreeFilter)
+        }
+        catch(err) {
+            res.status(500).json(err)
+        }
     }
-    catch(err) {
-        res.status(500).json(err)
+    else {
+        try {
+            const foundDegrees= await Degree.find()
+    
+            res.status(200).json(foundDegrees)
+        }
+        catch(err) {
+            res.status(500).json(err)
+        }
     }
+
 })
 
 router.get("/find/:id", async (req, res) => {
@@ -36,6 +52,67 @@ router.get("/find/:id", async (req, res) => {
     } catch(err) {
         res.status(500).json(err)
     }
+})
+
+router.post("/autocomplete", async(req, res)=> {
+    try {
+
+        const regex= new RegExp(req.body.what, "i")
+        
+        // console.log(regex   )
+        // console.log(degreeFilter)
+        // degreeFilter.exec(function(err, data){
+        //     console.log(data)
+        //     var result=[]
+        //     if (!err) {
+        //         if (data && data.length && data.length>0) {
+        //             data.forEach(user=> {
+        //                 let obj={
+        //                     id: user._id,
+        //                     label: user.name
+        //                 }
+        //                 result.push(obj)
+        //             })
+        //         }
+        //     }
+
+        if (!req.body.where) {
+            const degreeFilter= await Degree.find({name:regex}, {name:1})
+            var result=[]
+            if (degreeFilter && degreeFilter.length>0) {
+                degreeFilter.forEach(deg=> {
+                    let obj= {
+                        id: deg._id,
+                        label: deg.name
+                    }
+                    result.push(obj)
+                })
+            }
+            res.status(200).json(result)
+        }
+        else if (!req.body.what) {
+            console.log(req.body.where)
+            const degreeFilter= await Degree.find({location:{each: regex}})
+            console.log(degreeFilter)
+            var result=[]
+            if (degreeFilter && degreeFilter.length>0) {
+                degreeFilter.forEach(deg=> {
+                    let obj= {
+                        id: deg._id,
+                        label: deg.name
+                    }
+                    result.push(obj)
+                })
+            }
+            console.log(result)
+            res.status(200).json(result)
+        }
+    }
+    
+    catch(err) {
+        res.status(500).json(err)
+    }
+
 })
 
 module.exports= router
