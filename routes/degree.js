@@ -19,8 +19,10 @@ router.get("/", async (req, res)=> {
     if (searchQuery) {
         try {
             const regex= new RegExp(searchQuery, "i")
+            console.log(searchQuery)
             const degreeFilter= await Degree.find({name:regex})
-            
+            console.log(degreeFilter)
+
             res.status(200).json(degreeFilter)
         }
         catch(err) {
