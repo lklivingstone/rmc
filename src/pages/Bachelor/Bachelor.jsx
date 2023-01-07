@@ -15,6 +15,7 @@ const Bachelor = () => {
     const navigate= useNavigate()
     const location= useLocation()
     const searchquery= location.pathname.split("/")[2]
+    // console.log(searchquery)
     const [ data, setData ]= useState([])
     const [ loading, setLoading ]= useState(true)
 
@@ -23,7 +24,7 @@ const Bachelor = () => {
             try {
 
                 if (searchquery) {
-                    const res=  await publicRequest().get(`/degree?search=${searchquery}`)
+                    const res=  await publicRequest.get(`/degree?search=${searchquery}`)
                     setData(res)
                     setLoading(false)
                 }
@@ -52,7 +53,7 @@ const Bachelor = () => {
                         if (what!=="") {
                             const result= await publicRequest.post("/degree/autocomplete", { what})
                             console.log(result.data)
-                            return res(result.data)
+                            res(result.data)
                         }
                         // const result= await axios.get("https://rmc.onrender.com/api/")
                     } catch(err) {
@@ -64,6 +65,8 @@ const Bachelor = () => {
                     console.log(ui)
                     if (ui.item) {
                         $("#what").val(ui.item.label)
+                        console.log(ui.item)
+                        navigate(`/studies/${ui.item.id}`)
                     }
                 }
             })
@@ -98,7 +101,7 @@ const Bachelor = () => {
 
 
     const handleSearch= (e) => {
-        navigate(`/bachelor/${what}`)
+        navigate(`/bachelor/`)
     }
 
 
@@ -129,7 +132,7 @@ const Bachelor = () => {
                     <form className="example">
                         <input id="what" type="text" placeholder="What to study?" name="search" onChange={(e)=>setWhat(e.target.value)} />
                         <input id="where" style={{borderTopLeftRadius: "0", borderBottomLeftRadius: "0"}} type="text" placeholder="Where to study?" name="search" onChange={(e)=>setWhere(e.target.value)} />
-                        <button type="submit" onClick={handleSearch}><i className="fa fa-search"></i></button>
+                        <button onClick={handleSearch}><i className="fa fa-search"></i></button>
                     </form>
                 </div>
                 <div className="nav-user">
