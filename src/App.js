@@ -25,6 +25,7 @@ function App() {
           <Route path="/login" element= {user ? <Navigate to="/admin" replace /> :  <Login />} />
           <Route path="/admin" element= {user===null ? <Navigate to="/login" replace /> :  <Admin />} />
           <Route path="/bachelor" exact element={<Bachelor />}/>
+          <Route path="/bachelor/:search" exact element={<Bachelor />}/>
           <Route path="/studies/:id" exact element={<Study />}/>
           <Route path="/login" exact element={<Login />}/>
         </Routes>

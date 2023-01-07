@@ -42,3 +42,148 @@
     width: 90%;
     align-items: center;
 }
+
+
+.navbar {
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    top: 0;
+    left: 0;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-btns {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-search {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-user {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .navbar-logo {
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10rem;
+  }
+  
+  .nav-items {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+    width: 70vw;
+    justify-content: flex-end;
+    margin-right: 2rem;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    transition: 0.5s all ease-out;
+    font-weight: 300;
+  }
+
+  .nav-item:hover {
+    color: rgb(212, 54, 15);
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    margin-right: 2rem;
+    padding: 6px 16px;
+    border-radius: 5px;
+  }
+
+  .nav-item p {
+    padding: 0px 5px;
+  }
+  
+  /* .nav-item a:hover {
+    background: rgb(0, 212, 212);
+  } */
+
+  .triangle_down {
+    width: 0;
+    height: 0;
+    margin-right: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #2f2f2f;
+    font-size: 0;
+    line-height: 0;
+    float: left;
+}
+
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 40%;
+  height: 6vh;
+  background: transparent;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+/* Style the submit button */
+form.example button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  float: left;
+  width: 20px;
+  height: 6vh;
+  padding: 10px;
+  background: rgb(203, 84, 54);
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.example button:hover {
+  background: rgb(184, 76, 49);
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
